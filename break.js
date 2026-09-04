@@ -5,17 +5,24 @@ const curdDrops = document.querySelectorAll('.curd-drop');
 const janmashtamiText = document.getElementById('janmashtamiText');
 const cursorArea = document.getElementById('cursor-area');
 
+// Listen to clicks on both the cursor area and the matki directly for mobile taps
 cursorArea.addEventListener('click', breakHandi);
+handi.addEventListener('click', breakHandi);
+
+let isBroken = false;
 
 function breakHandi() {
+  if (isBroken) return; // Prevents triggering multiple times
+  isBroken = true;
+
   const breakSound = document.getElementById('breakSound');
   const fluteSound = document.getElementById('fluteSound');
-const tapInstruction = document.querySelector('.tap-instruction');
-  if (tapInstruction) {
-    tapInstruction.style.display = 'none'; 
-  }
+  const tapInstruction = document.querySelector('.tap-instruction');
 
-}
+  // Hide tap instruction text
+  if (tapInstruction) {
+    tapInstruction.style.display = 'none';
+  }
 
   // 1. Play pot breaking sound instantly
   if (breakSound) {
@@ -23,7 +30,7 @@ const tapInstruction = document.querySelector('.tap-instruction');
     breakSound.play();
   }
 
-  // 2. Play flute sound slightly after (as Krishna reveals)
+  // 2. Play festive audio track shortly after
   setTimeout(() => {
     if (fluteSound) {
       fluteSound.currentTime = 0;
@@ -31,6 +38,7 @@ const tapInstruction = document.querySelector('.tap-instruction');
     }
   }, 600);
 
+  // 3. Trigger CSS keyframe animations
   handi.classList.add('handi-break');
   brokenHandi.classList.add('show-broken-handi');
   potPieces.forEach((piece) => piece.classList.add('piecefall'));
