@@ -10,6 +10,12 @@ cursorArea.addEventListener('click', breakHandi);
 function breakHandi() {
   const breakSound = document.getElementById('breakSound');
   const fluteSound = document.getElementById('fluteSound');
+const tapInstruction = document.querySelector('.tap-instruction');
+  if (tapInstruction) {
+    tapInstruction.style.display = 'none'; 
+  }
+
+}
 
   // 1. Play pot breaking sound instantly
   if (breakSound) {
