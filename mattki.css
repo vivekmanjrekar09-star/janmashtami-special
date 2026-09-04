@@ -11,8 +11,13 @@ body {
 
 .container {
   position: relative;
-  width: 200px;
+  width: 100%;
+  max-width: 400px; 
   height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
 }
 
 .handi {
@@ -41,17 +46,16 @@ body {
 }
 
 .broken-handi {
-  width: 300%;
-  max-width: 90vw;
+  width: 85vw;
+  max-width: 320px;
   height: auto;
   position: absolute;
-  bottom: 100px;
+  bottom: 120px;
   left: 50%;
   transform: translateX(-50%) translateY(200px);
   opacity: 0;
   z-index: 5;
-  border-radius: 15px;
-  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+  border-radius: 12px;
 }
 
 .handi-break {
@@ -284,12 +288,13 @@ body {
 
 .happy-janmashtami {
   position: absolute;
-  width: max-content;
+  width: 90%;
+  text-align: center;
   bottom: 40px;
   left: 50%;
   transform: translateX(-50%);
   color: #ffcc00;
-  font-size: 2.5em;
+  font-size: clamp(1.5rem, 5vw, 2.2rem);
   font-weight: bold;
   font-family: 'Arial', sans-serif;
   opacity: 0;
