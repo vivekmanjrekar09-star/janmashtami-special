@@ -1,7 +1,6 @@
-* {
+*, html, body, div, img {
   box-sizing: border-box;
-  /* Applies coconut cursor across all screen elements */
-  cursor: url(https://www.codewithfaraz.com/project_images/dahi_handi/coconut.png) 32 32, auto;
+  cursor: url(https://www.codewithfaraz.com/project_images/dahi_handi/coconut.png) 32 32, auto !important;
 }
 
 html, body {
