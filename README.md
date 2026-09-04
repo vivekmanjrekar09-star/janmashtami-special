@@ -18,4 +18,4 @@ YOU CAN TRY IT HERE  🎮  **[Live Demo](https://vivekmanjrekar09-star.github.io
 ## 🚀 Run Locally
 1. Clone the repository:
    ```bash
-   git clone [https://github.com/vivekmanjrekar09-star/janmashtami-special.git](https://github.com/vivekmanjrekar09-star/janmashtami-special.git)
+   git clone https://github.com/vivekmanjrekar09-star/janmashtami-special.git
