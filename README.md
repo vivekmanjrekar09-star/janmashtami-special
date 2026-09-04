@@ -2,7 +2,7 @@
 
 An interactive web animation created for Janmashtami featuring custom SVG flute cursors, pot-shattering particle effects, and sound cues.
 
-🎮 YOU CAN TRY IT HERE **[Live Demo](https://vivekmanjrekar09-star.github.io/janmashtami-special/)** 
+YOU CAN TRY IT HERE  🎮  **[Live Demo](https://vivekmanjrekar09-star.github.io/janmashtami-special/)** 
 
 ## ✨ Features
 - Custom Krishna coconut SVG cursor.
