@@ -5,15 +5,22 @@
 html, body {
   margin: 0;
   padding: 0;
-  width: 100%;
-  height: 100%;
+  width: 100vw;
+  height: 100vh;
   height: 100dvh;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
   overflow: hidden;
-  position: fixed; /* Completely disables mobile drag/scroll behavior */
-  touch-action: manipulation;
-  overscroll-behavior: none;
   background: #000;
   font-family: 'Arial', sans-serif;
+  touch-action: manipulation;
+  overscroll-behavior: none;
 }
 
 .container {
@@ -26,6 +33,7 @@ html, body {
   align-items: center;
   justify-content: center;
   overflow: hidden;
+  margin: 0 auto;
 }
 
 .tap-instruction {
@@ -44,7 +52,6 @@ html, body {
   animation: pulse 1.5s infinite;
 }
 
-/* Offset slightly to account for the text on the left side of the PNG */
 .handi {
   width: 85%;
   max-width: 380px;
@@ -52,23 +59,22 @@ html, body {
   position: absolute;
   top: 48%;
   left: 50%;
-  transform: translate(-38%, -50%);
+  transform: translate(-50%, -50%);
   cursor: pointer;
   transition: transform 0.3s ease;
   z-index: 2;
 }
 
 .handi:hover {
-  transform: translate(-38%, -50%) scale(1.05);
+  transform: translate(-50%, -50%) scale(1.05);
 }
 
-/* Dynamic overlay over the pot area */
 .cursor-area {
   position: absolute;
   width: 170px;
   height: 170px;
   top: 50%;
-  left: 58%;
+  left: 50%;
   transform: translate(-50%, -50%);
   cursor: url(https://www.codewithfaraz.com/project_images/dahi_handi/coconut.png), auto;
   background-color: transparent;
@@ -81,7 +87,7 @@ html, body {
   max-width: 300px;
   height: auto;
   position: absolute;
-  bottom: 110px; /* Anchored right above the text */
+  bottom: 110px;
   left: 50%;
   transform: translateX(-50%) translateY(200px);
   opacity: 0;
@@ -110,13 +116,13 @@ html, body {
 
 @keyframes breakHandi {
   0% {
-    transform: translate(-38%, -50%);
+    transform: translate(-50%, -50%);
   }
   50% {
-    transform: translate(-38%, -70%) rotate(10deg);
+    transform: translate(-50%, -70%) rotate(10deg);
   }
   100% {
-    transform: translate(-38%, 100px) rotate(-45deg);
+    transform: translate(-50%, 100px) rotate(-45deg);
     opacity: 0;
   }
 }
@@ -215,7 +221,7 @@ html, body {
   position: absolute;
   width: 90%;
   text-align: center;
-  bottom: 25px; /* Sits cleanly above mobile navigation bar */
+  bottom: 25px;
   left: 50%;
   transform: translateX(-50%);
   color: #ffcc00;
@@ -242,7 +248,6 @@ html, body {
   }
 }
 
-/* Additional scaling for compact phone displays */
 @media (max-width: 480px) {
   .handi {
     max-width: 320px;
