@@ -1,7 +1,12 @@
+* {
+  box-sizing: border-box;
+}
+
 body {
   margin: 0;
   padding: 0;
   height: 100vh;
+  width: 100vw;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -10,13 +15,24 @@ body {
   font-family: 'Arial', sans-serif;
 }
 
+.container {
+  position: relative;
+  width: 100%;
+  max-width: 500px; 
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
 .tap-instruction {
   position: absolute;
-  top: 40px;
+  top: 15%;
   left: 50%;
   transform: translateX(-50%);
   color: #ffcc00;
-  font-size: 1rem;
+  font-size: clamp(1rem, 2.5vw, 1.2rem);
   font-weight: bold;
   letter-spacing: 1px;
   text-transform: uppercase;
@@ -26,50 +42,44 @@ body {
   animation: pulse 1.5s infinite;
 }
 
-.container {
-  position: relative;
-  width: 100%;
-  max-width: 400px; 
-  height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-}
-
+/* Offset slightly to account for the text on the left side of the PNG */
 .handi {
   width: 90%;
-  max-width: 320px;
+  max-width: 420px;
   height: auto;
   position: absolute;
+  top: 50%;
   left: 50%;
-  transform: translateX(-50%);
+  transform: translate(-38%, -50%);
   cursor: pointer;
   transition: transform 0.3s ease;
   z-index: 2;
 }
 
 .handi:hover {
-  transform: translateX(-50%) scale(1.05);
+  transform: translate(-38%, -50%) scale(1.05);
 }
 
+/* Dynamic overlay over the pot area */
 .cursor-area {
   position: absolute;
-  width: 100%;
-  height: 100%;
-  top: 0;
-  left: 0;
+  width: 180px;
+  height: 180px;
+  top: 52%;
+  left: 58%;
+  transform: translate(-50%, -50%);
   cursor: url(https://www.codewithfaraz.com/project_images/dahi_handi/coconut.png), auto;
   background-color: transparent;
   z-index: 3;
+  border-radius: 50%;
 }
 
 .broken-handi {
   width: 85vw;
-  max-width: 320px;
+  max-width: 340px;
   height: auto;
   position: absolute;
-  bottom: 120px;
+  bottom: 15%;
   left: 50%;
   transform: translateX(-50%) translateY(200px);
   opacity: 0;
@@ -98,13 +108,13 @@ body {
 
 @keyframes breakHandi {
   0% {
-    transform: translateX(-50%) translateY(0);
+    transform: translate(-38%, -50%);
   }
   50% {
-    transform: translateX(-50%) translateY(-20px) rotate(10deg);
+    transform: translate(-38%, -70%) rotate(10deg);
   }
   100% {
-    transform: translateX(-50%) translateY(100px) rotate(-45deg);
+    transform: translate(-38%, 100px) rotate(-45deg);
     opacity: 0;
   }
 }
@@ -116,7 +126,7 @@ body {
   }
 }
 
-/* Particle Effects */
+/* Particles */
 .pot-piece {
   position: absolute;
   width: 40px;
@@ -203,7 +213,7 @@ body {
   position: absolute;
   width: 90%;
   text-align: center;
-  bottom: 40px;
+  bottom: 8%;
   left: 50%;
   transform: translateX(-50%);
   color: #ffcc00;
