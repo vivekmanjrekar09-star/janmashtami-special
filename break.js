@@ -30,13 +30,22 @@ function breakHandi() {
     breakSound.play();
   }
 
-  // 2. Play festive audio track shortly after
-  setTimeout(() => {
-    if (fluteSound) {
-      fluteSound.currentTime = 0;
-      fluteSound.play();
-    }
-  }, 600);
+// 2. Play festive audio track shortly after
+if (fluteSound) {
+  // Prime audio synchronously to bypass mobile autoplay restrictions
+  fluteSound.muted = true;
+  fluteSound.play().then(() => {
+    fluteSound.pause();
+    fluteSound.muted = false;
+  }).catch(() => {});
+}
+
+setTimeout(() => {
+  if (fluteSound) {
+    fluteSound.currentTime = 0;
+    fluteSound.play();
+  }
+}, 600);
 
   // 3. Trigger CSS keyframe animations
   handi.classList.add('handi-break');
