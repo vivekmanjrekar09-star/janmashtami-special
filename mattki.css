@@ -65,6 +65,36 @@ body {
 .show-broken-handi {
   animation: showBrokenHandi 2.5s forwards ease-in-out;
 }
+/* ==========================================
+   INTERACTIVE & TOUCH UI
+   ========================================== */
+
+.tap-instruction {
+  position: absolute;
+  top: 80px;
+  left: 50%;
+  transform: translateX(-50%);
+  color: #ffffff;
+  font-size: 1rem;
+  font-weight: bold;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  z-index: 20;
+  pointer-events: none; 
+  animation: pulse 1.5s infinite;
+}
+
+
+@keyframes pulse {
+  0%, 100% {
+    opacity: 0.5;
+    transform: translateX(-50%) scale(0.95);
+  }
+  50% {
+    opacity: 1;
+    transform: translateX(-50%) scale(1.05);
+  }
+}
 
 @keyframes breakHandi {
   0% {
