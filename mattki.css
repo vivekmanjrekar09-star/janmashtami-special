@@ -60,7 +60,7 @@ html, body {
   top: 48%;
   left: 50%;
   transform: translate(-50%, -50%);
-  cursor: pointer;
+  cursor: url(https://www.codewithfaraz.com/project_images/dahi_handi/coconut.png) 32 32, pointer;
   transition: transform 0.3s ease;
   z-index: 2;
 }
@@ -74,9 +74,9 @@ html, body {
   width: 170px;
   height: 170px;
   top: 50%;
-  left: 56%;
+  left: 50%;
   transform: translate(-50%, -50%);
-  cursor: url(https://www.codewithfaraz.com/project_images/dahi_handi/coconut.png), auto;
+  cursor: url(https://www.codewithfaraz.com/project_images/dahi_handi/coconut.png) 32 32, pointer;
   background-color: transparent;
   z-index: 3;
   border-radius: 50%;
