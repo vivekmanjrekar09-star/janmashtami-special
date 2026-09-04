@@ -1,5 +1,7 @@
 * {
   box-sizing: border-box;
+  /* Applies coconut cursor across all screen elements */
+  cursor: url(https://www.codewithfaraz.com/project_images/dahi_handi/coconut.png) 32 32, auto;
 }
 
 html, body {
@@ -21,6 +23,7 @@ html, body {
   font-family: 'Arial', sans-serif;
   touch-action: manipulation;
   overscroll-behavior: none;
+  cursor: url(https://www.codewithfaraz.com/project_images/dahi_handi/coconut.png) 32 32, auto;
 }
 
 .container {
