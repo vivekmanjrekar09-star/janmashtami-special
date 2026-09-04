@@ -6,6 +6,7 @@ body {
   margin: 0;
   padding: 0;
   height: 100vh;
+  height: 100dvh; /* Automatically shrinks to fit inside mobile browser address bars */
   width: 100vw;
   display: flex;
   justify-content: center;
@@ -20,19 +21,21 @@ body {
   width: 100%;
   max-width: 500px; 
   height: 100vh;
+  height: 100dvh;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
+  overflow: hidden;
 }
 
 .tap-instruction {
   position: absolute;
-  top: 15%;
+  top: 6%;
   left: 50%;
   transform: translateX(-50%);
   color: #ffcc00;
-  font-size: clamp(1rem, 2.5vw, 1.2rem);
+  font-size: clamp(0.9rem, 2.5vw, 1.1rem);
   font-weight: bold;
   letter-spacing: 1px;
   text-transform: uppercase;
@@ -44,11 +47,11 @@ body {
 
 /* Offset slightly to account for the text on the left side of the PNG */
 .handi {
-  width: 90%;
-  max-width: 420px;
+  width: 85%;
+  max-width: 380px;
   height: auto;
   position: absolute;
-  top: 50%;
+  top: 48%;
   left: 50%;
   transform: translate(-38%, -50%);
   cursor: pointer;
@@ -63,9 +66,9 @@ body {
 /* Dynamic overlay over the pot area */
 .cursor-area {
   position: absolute;
-  width: 180px;
-  height: 180px;
-  top: 52%;
+  width: 170px;
+  height: 170px;
+  top: 50%;
   left: 58%;
   transform: translate(-50%, -50%);
   cursor: url(https://www.codewithfaraz.com/project_images/dahi_handi/coconut.png), auto;
@@ -75,11 +78,11 @@ body {
 }
 
 .broken-handi {
-  width: 85vw;
-  max-width: 340px;
+  width: 80vw;
+  max-width: 300px;
   height: auto;
   position: absolute;
-  bottom: 15%;
+  bottom: 110px; /* Anchored right above the text */
   left: 50%;
   transform: translateX(-50%) translateY(200px);
   opacity: 0;
@@ -129,8 +132,8 @@ body {
 /* Particles */
 .pot-piece {
   position: absolute;
-  width: 40px;
-  height: 50px;
+  width: 35px;
+  height: 45px;
   background-color: #bd3a1e;
   border: 2px solid #bd3a1e;
   transform-style: preserve-3d;
@@ -184,8 +187,8 @@ body {
 
 .curd-drop {
   background: #f4e9d8;
-  width: 50px;
-  height: 50px;
+  width: 40px;
+  height: 40px;
   position: absolute;
   left: 50%;
   bottom: 500%;
@@ -193,10 +196,10 @@ body {
   transform: translateX(-50%) rotate(45deg);
 }
 
-.curd-drop:nth-child(1) { width: 50px; height: 50px; animation-delay: 0.1875s; }
-.curd-drop:nth-child(2) { width: 35px; height: 35px; animation-delay: 0.375s; }
-.curd-drop:nth-child(3) { width: 25px; height: 25px; animation-delay: 0.5625s; }
-.curd-drop:nth-child(4) { width: 15px; height: 15px; animation-delay: 0.65s; }
+.curd-drop:nth-child(1) { width: 40px; height: 40px; animation-delay: 0.1875s; }
+.curd-drop:nth-child(2) { width: 30px; height: 30px; animation-delay: 0.375s; }
+.curd-drop:nth-child(3) { width: 20px; height: 20px; animation-delay: 0.5625s; }
+.curd-drop:nth-child(4) { width: 12px; height: 12px; animation-delay: 0.65s; }
 
 .curdfall {
   animation: curdfall 2s ease-in;
@@ -213,11 +216,11 @@ body {
   position: absolute;
   width: 90%;
   text-align: center;
-  bottom: 8%;
+  bottom: 25px; /* Sits cleanly above mobile navigation bar */
   left: 50%;
   transform: translateX(-50%);
   color: #ffcc00;
-  font-size: clamp(1.5rem, 5vw, 2.2rem);
+  font-size: clamp(1.4rem, 4.5vw, 2.2rem);
   font-weight: bold;
   opacity: 0;
   z-index: 10;
@@ -237,5 +240,19 @@ body {
     opacity: 1;
     transform: translate(-50%, 0%);
     text-shadow: 0 0 10px #ff7700, 0 0 20px #ff7700, 0 0 30px #ff9933;
+  }
+}
+
+/* Additional scaling for compact phone displays */
+@media (max-width: 480px) {
+  .handi {
+    max-width: 320px;
+  }
+  .broken-handi {
+    max-width: 250px;
+    bottom: 95px;
+  }
+  .happy-janmashtami {
+    bottom: 20px;
   }
 }
