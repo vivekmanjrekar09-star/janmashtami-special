@@ -52,6 +52,8 @@ html, body {
   animation: pulse 1.5s infinite;
 }
 
+/* Update these sections in mattki.css */
+
 .handi {
   width: 85%;
   max-width: 380px;
@@ -60,13 +62,10 @@ html, body {
   top: 48%;
   left: 50%;
   transform: translate(-50%, -50%);
+  /* Apply custom coconut cursor with centered 32px hotspot */
   cursor: url(https://www.codewithfaraz.com/project_images/dahi_handi/coconut.png) 32 32, pointer;
   transition: transform 0.3s ease;
   z-index: 2;
-}
-
-.handi:hover {
-  transform: translate(-50%, -50%) scale(1.05);
 }
 
 .cursor-area {
