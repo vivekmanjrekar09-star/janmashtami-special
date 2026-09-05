@@ -5,34 +5,34 @@ const curdDrops = document.querySelectorAll('.curd-drop');
 const janmashtamiText = document.getElementById('janmashtamiText');
 const cursorArea = document.getElementById('cursor-area');
 
-// Listen to clicks on both the cursor area and the matki directly for mobile taps
+
 cursorArea.addEventListener('click', breakHandi);
 handi.addEventListener('click', breakHandi);
 
 let isBroken = false;
 
 function breakHandi() {
-  if (isBroken) return; // Prevents triggering multiple times
+  if (isBroken) return; 
   isBroken = true;
 
   const breakSound = document.getElementById('breakSound');
   const fluteSound = document.getElementById('fluteSound');
   const tapInstruction = document.querySelector('.tap-instruction');
 
-  // Hide tap instruction text
+  
   if (tapInstruction) {
     tapInstruction.style.display = 'none';
   }
 
-  // 1. Play pot breaking sound instantly
+  
   if (breakSound) {
     breakSound.currentTime = 0;
     breakSound.play();
   }
 
-// 2. Play festive audio track shortly after
+
 if (fluteSound) {
-  // Prime audio synchronously to bypass mobile autoplay restrictions
+  
   fluteSound.muted = true;
   fluteSound.play().then(() => {
     fluteSound.pause();
@@ -47,7 +47,7 @@ setTimeout(() => {
   }
 }, 600);
 
-  // 3. Trigger CSS keyframe animations
+  
   handi.classList.add('handi-break');
   brokenHandi.classList.add('show-broken-handi');
   potPieces.forEach((piece) => piece.classList.add('piecefall'));
