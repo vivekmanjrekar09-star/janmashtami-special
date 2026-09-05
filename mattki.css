@@ -54,7 +54,7 @@ html, body {
   animation: pulse 1.5s infinite;
 }
 
-/* Update these sections in mattki.css */
+
 
 .handi {
   width: 85%;
@@ -64,7 +64,7 @@ html, body {
   top: 48%;
   left: 50%;
   transform: translate(-50%, -50%);
-  /* Apply custom coconut cursor with centered 32px hotspot */
+  
   cursor: url(https://www.codewithfaraz.com/project_images/dahi_handi/coconut.png) 32 32, pointer;
   transition: transform 0.3s ease;
   z-index: 2;
@@ -135,7 +135,7 @@ html, body {
   }
 }
 
-/* Particles */
+
 .pot-piece {
   position: absolute;
   width: 35px;
@@ -181,7 +181,7 @@ html, body {
 .piece9 { clip-path: polygon(50% 0%, 100% 50%, 80% 100%, 0% 50%); --delay: 0.5s; --rotate: -150deg; --rotate-end: 810deg; top: 10%; left: 50%; }
 .piece10 { clip-path: polygon(0 0, 100% 20%, 50% 100%, 0% 50%); --delay: 0.55s; --rotate: 180deg; --rotate-end: 900deg; top: 20%; left: 35%; }
 
-/* Curd Drops */
+
 .curd {
   background: transparent;
   width: 100%;
@@ -217,7 +217,7 @@ html, body {
   100% { bottom: -200px; }
 }
 
-/* Greeting Text */
+
 .happy-janmashtami {
   position: absolute;
   width: 90%;
